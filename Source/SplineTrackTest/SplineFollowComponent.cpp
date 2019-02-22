@@ -40,9 +40,7 @@ void USplineFollowComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 	{
 		FTransform trans = SplineComponent->GetTransformAtTime(CurrentSplinePosition, ESplineCoordinateSpace::World, false, false);
 
-		GetOwner()->SetActorLocationAndRotation(trans.GetLocation(),
-
-			trans.GetRotation());
+		GetOwner()->SetActorLocationAndRotation(trans.GetLocation(),trans.GetRotation());
 
 		CurrentSplinePosition += DeltaTime * MoveSpeed;
 		// wrap if we are past the end of the spline (spline duration)
