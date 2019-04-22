@@ -1,10 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "TrackGenerator.h"
 #include "Components/SplineComponent.h"
 #include "Components/SplineMeshComponent.h"
 #include "Components/TextRenderComponent.h"
-#include "TrackGenerator.h"
-
 
 // Sets default values
 ATrackGenerator::ATrackGenerator()
@@ -67,6 +66,7 @@ void ATrackGenerator::OnConstruction(const FTransform & Transform)
 			TextRender->SetRelativeLocation(location + FVector::UpVector * 50);
 			TextRender->SetRelativeRotation(rotation);
 
+			//Set text(splinepoint) & text colour
 			TextRender->SetText(FString::FromInt(i));
 			TextRender->SetTextRenderColor(FColor(255, 90, 112));
 		}
