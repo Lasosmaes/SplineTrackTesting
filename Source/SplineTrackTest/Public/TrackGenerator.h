@@ -57,11 +57,11 @@ public:
 		bool LoopingTrack = false;
 
 	//Meshes
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mesh")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
 		UStaticMesh* RoadMesh = nullptr;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mesh")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
 		UStaticMesh* LeftGuardMesh = nullptr;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Mesh")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
 		UStaticMesh* RightGuardMesh = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug")

@@ -67,7 +67,8 @@ void ATrackGenerator::OnConstruction(const FTransform & Transform)
 			TextRender->SetRelativeRotation(rotation);
 
 			//Set text(splinepoint) & text colour
-			TextRender->SetText(FString::FromInt(i));
+			FText t = FText::FromString(FString::FromInt(i));
+			TextRender->SetText(t);
 			TextRender->SetTextRenderColor(FColor(255, 90, 112));
 		}
 	}
