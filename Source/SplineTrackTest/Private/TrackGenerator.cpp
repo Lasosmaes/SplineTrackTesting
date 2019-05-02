@@ -23,6 +23,7 @@ void ATrackGenerator::OnConstruction(const FTransform & Transform)
 	// Build RoadData array
 	int32 countDataEntries = RoadDataArray.Num();
 
+	//Updates spline to have correct # of spline points, removes or adds accordingly
 	while (countDataEntries != NumberOfSplinePoints)
 	{
 		if (countDataEntries > NumberOfSplinePoints)
@@ -43,6 +44,7 @@ void ATrackGenerator::OnConstruction(const FTransform & Transform)
 	{
 		BuildTrackElement(i, RoadMesh);
 
+		//Build guard rails if enabled
 		if (RoadDataArray[i].LeftGuardRail)
 			BuildTrackElement(i, LeftGuardMesh);
 		if (RoadDataArray[i].RightGuardRail)
@@ -52,6 +54,7 @@ void ATrackGenerator::OnConstruction(const FTransform & Transform)
 	// Draw point #s
 	if (DrawTrackPointNumbers)
 	{
+		//Renders numbers above each spline point during gameplay for debugging
 		for (int32 i = 0; i < NumberOfSplinePoints; i++)
 		{
 			FVector location, tangent;
@@ -59,6 +62,7 @@ void ATrackGenerator::OnConstruction(const FTransform & Transform)
 
 			FRotator rotation = (tangent * -1.0f).Rotation();
 			
+			//Creates TextRender
 			UTextRenderComponent* TextRender = NewObject<UTextRenderComponent>(this);
 			TextRender->CreationMethod = EComponentCreationMethod::UserConstructionScript;
 			TextRender->SetupAttachment(RootComponent);

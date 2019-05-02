@@ -11,10 +11,13 @@ struct FRoadData
 {
 	GENERATED_BODY()
 
+	//Whether guard rails are enabled
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool LeftGuardRail;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		bool RightGuardRail;
+
+	//Track properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float TrackBank;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -54,7 +57,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
 		TArray<FRoadData> RoadDataArray;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Config")
-		bool LoopingTrack = false;
+		bool LoopingTrack = false;	//Whether the beginning & end of the track connect
 
 	//Meshes
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh")
@@ -67,7 +70,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug")
 		bool Collisions = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug")
-		bool DrawTrackPointNumbers = true;
+		bool DrawTrackPointNumbers = true;	//Displays each track point in gameplay
 
 private:
 	int32 NumberOfSplinePoints = 0;
